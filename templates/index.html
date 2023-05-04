@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!--Section: about Hitech-->
+
+<div align="center">
+
+    <div class="card mb-6" style="max-width: 740px;">
+        <h1> Блок: «Информация о направлении, его особенностях» </h1>
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src='static/img/hitech.png' class="img-fluid rounded-start" align="center" alt="лого хайтека">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <ul style="text-align: left;">
+                        <li>
+                            <p>
+                                для учащихся 6–11 классов (12–18 лет)
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                занятия один/два раза в неделю по 80 минут
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                объем модуля – 36/72 академических часа
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                группы по 10 человек
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                публичная защита проектов по итогам модуля
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                возможность участвовать в выставках
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="https://drive.google.com/file/d/16IEnsdjiAU3Q6LqRwYe7urqZTMviYtKG/view?usp=sharing">Программа
+                                    вводного модуля</a><br>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="https://drive.google.com/file/d/1Glqub8lwIFQff0jn6wi1UjcU2MG1W2tA/view?usp=sharing">Программа
+                                    углубленного модуля</a><br>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<!--Section: Блок: «Образовательные модули» -->
+
+<div class="container text-center">
+    <h1> Блок: «Образовательные модули»</h1>
+    <div class="row">
+        <div class="col">
+            <div class="card mb-6" style="max-width: 740px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src='static/img/trotec.jpg' class="img-fluid rounded-start" align="center"
+                             alt="фото лазера">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            Вводный модуль - работа на станке лазерной резки
+                            <a href='https://drive.google.com/file/d/16IEnsdjiAU3Q6LqRwYe7urqZTMviYtKG/view?usp=sharing'
+                               target="_blank">
+                                Программа вводного модуля</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-6" style="max-width: 740px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src='static/img/makerbot.jpg' class="img-fluid rounded-start" align="center"
+                             alt="фото принтера">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            Углубленный модуль - работа на 3D принтерах
+                            <a href='https://drive.google.com/file/d/1Glqub8lwIFQff0jn6wi1UjcU2MG1W2tA/view?usp=sharing'
+                               target="_blank">
+                                Программа углубленного модуля</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card mb-6" style="max-width: 740px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src='static/img/woodtec.jpg' class="img-fluid rounded-start" align="center"
+                             alt="фото принтера">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            Проектный модуль - работа на фрезерных станках с ЧПУ
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<!-- Контейнер для галереи изображений -->
+<h1 align="center"> Блок: «Фотогалерея» </h1>
+<div class="container">
+    <!-- Полноразмерные изображения с числовым текстом -->
+    {% for photo in range(count_photos) %}
+    <div class="mySlides">
+        <div class="numbertext">{{photo + 1}} / {{count_photos}}</div>
+        <img src="static/img/hitech_photos/{{photos[photo]}}" style="width:100%">
+    </div>
+    {% endfor %}
+    <!-- Вперед и назад кнопки -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Текст изображения -->
+    <div class="caption-container">
+        <p id="caption"></p>
+    </div>
+
+    <!-- Миниатюры -->
+    <div class="row">
+        {% for photo in range(count_photos) %}
+        <div class="column">
+            <img class="demo cursor" src="static/img/hitech_photos/{{photos[photo]}}" style="width:100%"
+                 onclick="currentSlide({{photo+1}})">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br>
+<h1> Контакты </h1>
+<a href="tel: +79187010224">+7 (918) 701-02-24</a>
+<a href="mailto: skvorcov-pa-vel@yandex.ru">skvorcov-pa-vel@yandex.ru</a>
+<a href="https://t.me/kvantorium15_news">https://t.me/kvantorium15_news</a>
+{% endblock %}
